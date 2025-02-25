@@ -45,7 +45,7 @@ char* password = "YOUR_WIFI_PASSW";
 
 //Api key to be taken anywhere (I used OpenWeatherMap, created an account freely and used my api key)
 const char* weatherApiKey = "YOUR_API_KEY";
-const char* weatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=Rome,IT&appid=&units=metric";
+const char* weatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=Rome,IT&appid=YOUR_API_KEY&units=metric";
 
 // Global variables
 int brightness = 1; // LED light intesity (from 0 to 15)
