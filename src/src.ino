@@ -48,7 +48,7 @@ const char* weatherApiKey = "YOUR_API_KEY";
 const char* weatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=Rome,IT&appid=YOUR_API_KEY&units=metric";
 
 // Global variables
-int brightness = 1; // LED light intesity (from 0 to 15)
+int brightness = 0; // LED light intesity (from 0 to 15)
 uint16_t  h, m, s;
 char szTime[9];    // mm:ss\0
 char weatherDescription[21] = "";
@@ -193,8 +193,10 @@ void loop(void) {
     if (toggleTemperature) {
       // Show numeric value of temperature
       char tempStr[6];
-      snprintf(tempStr, sizeof(tempStr), "%.1fC", temperature);
-      P.displayZoneText(0, tempStr, PA_RIGHT, SPEED_TIME, 0, PA_PRINT, PA_NO_EFFECT);
+      int tempInt = (int)temperature;
+
+      snprintf(tempStr, sizeof(tempStr), "%dC", tempInt);
+      P.displayZoneText(0, tempStr, PA_CENTER, SPEED_TIME, 0, PA_PRINT, PA_NO_EFFECT);
     } else {
       // Show char at index 7 of meteo font
       char tempIconChar[2] = {(char)7, '\0'};
