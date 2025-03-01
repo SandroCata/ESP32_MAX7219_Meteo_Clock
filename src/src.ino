@@ -93,21 +93,21 @@ void fetchWeather() {
       temperature = doc["main"]["temp"].as<float>();
 
       //Set the meteo char code 
-      int weatherChar = 0; // Default on Clear
+      int weatherChar = 1; // Default on Clear
       if (description.equalsIgnoreCase("Clear")) {
-        weatherChar = 0; // Clear
+        weatherChar = 1; // Clear
       } else if (description.equalsIgnoreCase("Rain") || description.equalsIgnoreCase("Drizzle")) {
-        weatherChar = 1; // Rain
+        weatherChar = 2; // Rain
       } else if (description.equalsIgnoreCase("Clouds")) {
-        weatherChar = 2; // Clouds
+        weatherChar = 3; // Clouds
       } else if (description.equalsIgnoreCase("Snow")) {
-        weatherChar = 3; // Snow
+        weatherChar = 4; // Snow
       } else if (description.equalsIgnoreCase("Thunderstorm")) {
-        weatherChar = 4; // Thunderstorm
+        weatherChar = 5; // Thunderstorm
       } else if (description.equalsIgnoreCase("Mist") || description.equalsIgnoreCase("Fog") || description.equalsIgnoreCase("Haze") || description.equalsIgnoreCase("Sand") || 
                 description.equalsIgnoreCase("Squall") || description.equalsIgnoreCase("Ash") || description.equalsIgnoreCase("Tornado") || description.equalsIgnoreCase("Dust") || 
                 description.equalsIgnoreCase("Smoke")) {
-        weatherChar = 5; // Atmosphere (mostly Mist or Fog)
+        weatherChar = 6; // Atmosphere (mostly Mist or Fog)
       }
       //record in weatherIcon the icon to be used as index char in "meteo" custom font
       weatherIcon = weatherChar;
